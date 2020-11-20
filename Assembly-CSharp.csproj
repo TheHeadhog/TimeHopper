@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CharacterController2D.cs" />
     <Compile Include="Assets\MovementScript.cs" />
     <Compile Include="Assets\PlayerStatus.cs" />
     <Reference Include="UnityEngine">

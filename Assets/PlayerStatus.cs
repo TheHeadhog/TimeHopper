@@ -14,7 +14,7 @@ public class PlayerStatus : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        takeDamage();
+        
     }
 
     public void takeDamage(int dmg=1)

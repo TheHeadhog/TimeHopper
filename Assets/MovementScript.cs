@@ -5,29 +5,36 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
-    public float speed = 0.7f;
-    public float jumpForce = 4f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb2d = gameObject.GetComponent<Rigidbody2D>();   
-    }
-
+    public CharacterController2D controller;
+    public float runSpeed = 40f;
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch = false;
     // Update is called once per frame
     void Update()
     {
+        horizontalMove=Input.GetAxisRaw("Horizontal")*runSpeed;
+        
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("OPA");
+            jump = true;
+        }
 
+        if (Input.GetButtonDown("Crouch"))
+        {
+            crouch = true;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            crouch = false;
+        }
     }
 
+    // FixedUpdate is called fixed amount of time per second
     void FixedUpdate()
     {
-        float dirHorizontal = Input.GetAxis("Horizontal");
-        rb2d.AddForce(new Vector2(dirHorizontal, 0) * speed,ForceMode2D.Impulse);
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            rb2d.AddForce(new Vector2(0, 1) * jumpForce, ForceMode2D.Impulse);
-        }
-        
+        controller.Move(horizontalMove*Time.fixedDeltaTime, crouch, jump);
+        jump = false;
     }
 }
