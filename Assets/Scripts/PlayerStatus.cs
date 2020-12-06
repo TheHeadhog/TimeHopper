@@ -7,6 +7,9 @@ public class PlayerStatus : MonoBehaviour
 
     public int Health;
     private int Fuel;
+    public CameraScript main_camera;
+    public CameraScript alt_camera;
+
 
     public float levelHeight = 18f;
 
@@ -55,6 +58,7 @@ public class PlayerStatus : MonoBehaviour
     {
         transform.position = getAltCoords();
         isAlternate = !isAlternate;
+        swapTransforms();
     }
     //Dohvatanje novih koordinata pri promeni iz jednog u drugi timeline
     private Vector3 getAltCoords()
@@ -81,4 +85,15 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    private void swapTransforms()
+    {
+        Transform tmp;
+        tmp = main_camera.main_target;
+        main_camera.main_target = main_camera.alt_target;
+        main_camera.alt_target = tmp;
+
+        tmp = alt_camera.main_target;
+        alt_camera.main_target = alt_camera.alt_target;
+        alt_camera.alt_target = tmp;
+    }
 }
