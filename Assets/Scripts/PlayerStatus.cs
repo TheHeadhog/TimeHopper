@@ -11,8 +11,6 @@ public class PlayerStatus : MonoBehaviour
     public CameraScript alt_camera;
 
 
-    public float levelHeight = 18f;
-
     private GameObject shadow=null, shadowInv=null;
 
     //u kom timeline-u se trenutno nalazi igrac, korisno za dodavanje i oduzimanje sposobnosti
