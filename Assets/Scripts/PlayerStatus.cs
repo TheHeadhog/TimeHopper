@@ -13,7 +13,7 @@ public class PlayerStatus : MonoBehaviour
 
     public float levelHeight = 18f;
 
-    private SpriteRenderer shadow=null, shadowInv=null;
+    private GameObject shadow=null, shadowInv=null;
 
     //u kom timeline-u se trenutno nalazi igrac, korisno za dodavanje i oduzimanje sposobnosti
     public bool isAlternate = false;
@@ -21,8 +21,8 @@ public class PlayerStatus : MonoBehaviour
 
 
     void Start(){
-        shadow = (this.transform.Find("Shadow").gameObject).GetComponent<SpriteRenderer>();
-        shadowInv = (this.transform.Find("ShadowInv").gameObject).GetComponent<SpriteRenderer>();
+        shadow = this.transform.Find("Shadow").gameObject;
+        shadowInv = this.transform.Find("ShadowInv").gameObject;
 
         if (transform.position.y < 0)
         {
@@ -63,25 +63,31 @@ public class PlayerStatus : MonoBehaviour
     //Dohvatanje novih koordinata pri promeni iz jednog u drugi timeline
     private Vector3 getAltCoords()
     {
-        var output = this.transform.position;
+        Vector3 output;
         if (!isAlternate)
-            output.y -= levelHeight;
+        {
+            output = shadow.transform.position;
+            output.y -= 1.6f;
+        }
         else
-            output.y += levelHeight;
+        {
+            output = shadowInv.transform.position;
+            output.y -= 1.6f;
+        }
         return output;
     }
 
     private void hideShadow() 
     {
-        if (!isAlternate)
+        if (isAlternate)
         {
-            shadowInv.enabled = true;
-            shadow.enabled = false;
+            shadowInv.GetComponent<SpriteRenderer>().enabled = true;
+            shadow.GetComponent<SpriteRenderer>().enabled = false;
         }
         else
         {
-            shadowInv.enabled = false;
-            shadow.enabled = true;
+            shadowInv.GetComponent<SpriteRenderer>().enabled = false;
+            shadow.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 
