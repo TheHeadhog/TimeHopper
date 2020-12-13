@@ -15,13 +15,14 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 newPos = new Vector3(main_target.position.x, main_target.position.y, -10);
+        //transform.position = Vector3.Slerp(transform.position, newPos, howSmooth);
+         transform.position = newPos;
     }
 
     void LateUpdate()
     {
-        Vector3 newPos = new Vector3(main_target.position.x, main_target.position.y, -10);
-        transform.position = Vector3.Slerp(transform.position, newPos, howSmooth);
+        
         
 
     }
