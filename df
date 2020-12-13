@@ -1,0 +1,43 @@
+[33mcommit 4c2c50a7a8a3b6c48f5e830a783fecd4a5f55e01[m[33m ([m[1;36mHEAD -> [m[1;32mZa_merge[m[33m, [m[1;32mz-eksperiment[m[33m)[m
+Author: Marko101ish <obradovicmarko1999@gmail.com>
+Date:   Sun Dec 13 02:08:17 2020 +0100
+
+    Odvojeni tajmlinovi
+    
+    Basic na z=+1000
+    Alt na z=-1000
+    Kamere rade
+
+[33mcommit 27d6ee1a329fa5427fee13a44ec99f6c24f6f7eb[m
+Author: Marko101ish <40153649+Marko101ish@users.noreply.github.com>
+Date:   Fri Dec 11 16:05:49 2020 +0100
+
+    prvi komit
+    
+    Obe dimenzije smestam na isto mesto po x i y, ali se skrivaju jedan iza druge po z osi
+
+[33mcommit 3171822b32aad6daeffe00dc9ce4a91976a38bcf[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Headhog <stevan.popovic.headhog@gmail.com>
+Date:   Sun Dec 6 21:59:56 2020 +0100
+
+    Razdvojene kamere od fiksne vertikale, i dalje malo nestabilno
+
+[33mcommit f4ec7347550bc9e32e687423408e9424cddc0238[m
+Author: Marko101ish <40153649+Marko101ish@users.noreply.github.com>
+Date:   Fri Nov 27 17:10:14 2020 +0100
+
+    Camera and timeline
+    
+    Fixed rail camera and added switching between timelines
+
+[33mcommit 0ad779b622ff502caded05472b12e8b507fd501b[m
+Author: Headhog <stevan.popovic.headhog@gmail.com>
+Date:   Fri Nov 20 14:32:14 2020 +0100
+
+    Basic character movement added
+
+[33mcommit c71f47517396aa4dab944b7e1f4b313259e53097[m
+Author: Headhog <stevan.popovic.headhog@gmail.com>
+Date:   Mon Nov 9 23:50:34 2020 +0100
+
+    Prvi komit
