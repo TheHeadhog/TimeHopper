@@ -7,9 +7,8 @@ public class PlayerStatus : MonoBehaviour
 
     public int Health;
     private int Fuel;
-    public CameraScript basic_camera;
+    public CameraScript main_camera;
     public CameraScript alt_camera;
-
 
 
     private GameObject shadow=null, shadowInv=null;
@@ -59,8 +58,6 @@ public class PlayerStatus : MonoBehaviour
         isAlternate = !isAlternate;
         swapTransforms();
     }
-
-
     //Dohvatanje novih koordinata pri promeni iz jednog u drugi timeline
     private Vector3 getAltCoords()
     {
@@ -68,10 +65,12 @@ public class PlayerStatus : MonoBehaviour
         if (!isAlternate)
         {
             output = shadow.transform.position;
+            output.y -= 1.6f;
         }
         else
         {
             output = shadowInv.transform.position;
+            output.y -= 1.6f;
         }
         return output;
     }
@@ -90,21 +89,15 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-
-//Zamena targeta za obe kamere
     private void swapTransforms()
     {
         Transform tmp;
-        tmp = basic_camera.main_target;
-        basic_camera.main_target = basic_camera.alt_target;
-        basic_camera.alt_target = tmp;
-
-        //basic_camera.position = basic_camera.main_target.transform.position;
+        tmp = main_camera.main_target;
+        main_camera.main_target = main_camera.alt_target;
+        main_camera.alt_target = tmp;
 
         tmp = alt_camera.main_target;
         alt_camera.main_target = alt_camera.alt_target;
         alt_camera.alt_target = tmp;
-
-        //alt_camera.position = alt_camera.main_target.transform.position;
     }
 }
