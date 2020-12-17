@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 21300004
     second: BlueprintTile
+  - first:
+      213: 1538391553623687089
+    second: PlatformerTiles_0
+  - first:
+      213: 8281553042068457715
+    second: PlatformerTiles_1
+  - first:
+      213: -3306226932381100584
+    second: PlatformerTiles_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -79,12 +88,24 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StoneTile
+      name: PlatformerTiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -92,20 +113,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cab907f4b928b745ba11508df93d88e
-      internalID: 21300000
+      spriteID: 1bf733f97f6795510800000000000000
+      internalID: 1538391553623687089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BrickTile
+      name: PlatformerTiles_1
       rect:
         serializedVersion: 2
         x: 16
@@ -113,20 +134,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4807686958aa9e24790e08efec3d28ce
-      internalID: 21300002
+      spriteID: 3f8cb0d3d9cfde270800000000000000
+      internalID: 8281553042068457715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlueprintTile
+      name: PlatformerTiles_2
       rect:
         serializedVersion: 2
         x: 32
@@ -134,14 +155,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff7d7adf649684649a6d235e8be9e4f8
-      internalID: 21300004
+      spriteID: 8d558944f1ced12d0800000000000000
+      internalID: -3306226932381100584
       vertices: []
       indices: 
       edges: []
