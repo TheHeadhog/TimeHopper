@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShadowScript : MonoBehaviour
 {
-    public GameObject player;
+    public bool inCollision = false;
 
     void Start()
     {
@@ -14,7 +14,13 @@ public class ShadowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // this.transform.position.x = player.transform.position.x;
-        //this.transform.position.y = player.transform.position.y;
+
+    }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        inCollision = true;
+    }
+    void OnTriggerExit2D(Collider2D col) {
+        inCollision = false;
     }
 }

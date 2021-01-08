@@ -30,14 +30,28 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    private bool checkCollision() {
+        GameObject altSelf;
+        if(isAlternate)
+            altSelf = shadowInv;
+        else
+            altSelf = shadow;
+
+        //ako se altSelf poklapa sa necim onda se ne dozvoljava prelazak!
+        Debug.Log(altSelf.GetComponent<ShadowScript>().inCollision);
+        return altSelf.GetComponent<ShadowScript>().inCollision;
+    }
+
     // Update is called once per frame
     void Update(){
 
         //Prelazak u suprotni timeline se aktivira tasterom 'C'
         if (Input.GetKeyDown(KeyCode.C))
         {
-            changeTimeline();
-            hideShadow();
+            if(!checkCollision()) {
+                changeTimeline();
+                hideShadow();
+            }
         }
         if (persistant > 0) { --persistant; if (persistant == 0) { Debug.Log(persistant); } }
 

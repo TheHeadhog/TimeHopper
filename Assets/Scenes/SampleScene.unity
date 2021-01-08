@@ -398,6 +398,9 @@ GameObject:
   m_Component:
   - component: {fileID: 610189382}
   - component: {fileID: 610189383}
+  - component: {fileID: 610189385}
+  - component: {fileID: 610189384}
+  - component: {fileID: 610189386}
   m_Layer: 0
   m_Name: ShadowInv
   m_TagString: Untagged
@@ -469,6 +472,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &610189384
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610189381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.029461682, y: 2.42}
+  serializedVersion: 2
+  m_Radius: 0.64
+--- !u!61 &610189385
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610189381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025682196, y: 0.92706597}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5196411, y: 0.0013155937}
+    oldSize: {x: 1.5, y: 3.2}
+    newSize: {x: 0.15, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0113645, y: 1.6274939}
+  m_EdgeRadius: 0
+--- !u!114 &610189386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610189381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b9020805b420d40ad151f91ecadf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCollision: 0
 --- !u!1 &666205248
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +594,9 @@ GameObject:
   m_Component:
   - component: {fileID: 700011928}
   - component: {fileID: 700011929}
+  - component: {fileID: 700011931}
+  - component: {fileID: 700011930}
+  - component: {fileID: 700011932}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -551,7 +612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700011927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1952.141, z: 0}
+  m_LocalPosition: {x: 0, y: -1951.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1766391065}
@@ -607,6 +668,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &700011930
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700011927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.029461656, y: 2.4186635}
+  serializedVersion: 2
+  m_Radius: 0.63865805
+--- !u!61 &700011931
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700011927}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.012842566, y: 1.0260296}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5196411, y: 0.0013155937}
+    oldSize: {x: 1.5, y: 3.2}
+    newSize: {x: 0.15, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9294905, y: 1.5531524}
+  m_EdgeRadius: 0
+--- !u!114 &700011932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700011927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b9020805b420d40ad151f91ecadf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCollision: 0
 --- !u!1 &1107086681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2534,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607382754}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1607382757
 Camera:
   m_ObjectHideFlags: 0
