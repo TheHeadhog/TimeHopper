@@ -2,16 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour
 {
 
+ 
+    public GameObject spawnPoint;
     public int Health;
     private int Fuel;
     public CameraScript basic_camera;
     public CameraScript alt_camera;
     public Rigidbody2D character_body;
-
+    private HealthScript healthBar;
     private GameObject shadow=null, shadowInv=null;
     //u kom timeline-u se trenutno nalazi igrac, korisno za dodavanje i oduzimanje sposobnosti
     public bool isAlternate = false;
@@ -19,6 +23,7 @@ public class PlayerStatus : MonoBehaviour
 
 
     void Start(){
+        healthBar = FindObjectOfType<HealthScript>();   
         shadow = this.transform.Find("Shadow").gameObject;
         shadowInv = this.transform.Find("ShadowInv").gameObject;
 
@@ -38,7 +43,7 @@ public class PlayerStatus : MonoBehaviour
             altSelf = shadow;
 
         //ako se altSelf poklapa sa necim onda se ne dozvoljava prelazak!
-        Debug.Log(altSelf.GetComponent<ShadowScript>().inCollision);
+        //Debug.Log(altSelf.GetComponent<ShadowScript>().inCollision);
         return altSelf.GetComponent<ShadowScript>().inCollision;
     }
 
@@ -51,6 +56,12 @@ public class PlayerStatus : MonoBehaviour
             if(!checkCollision()) {
                 changeTimeline();
                 hideShadow();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(Health==0) {
+                respawn();
             }
         }
         if (persistant > 0) { --persistant; if (persistant == 0) { Debug.Log(persistant); } }
@@ -78,13 +89,16 @@ public class PlayerStatus : MonoBehaviour
     public void takeDamage(int dmg=1)
     {
         Health -= dmg;
+        int healthIndex=0;
+        healthBar.setHealth(Health);
         if (Health <= 0) die();
     }
 
     private void die()
     {
+        Health=0;
+        healthBar.setHealth(Health);
         (gameObject.GetComponent<Rigidbody2D>()).simulated = false;
-        Time.timeScale = 0;
     }
 
 
@@ -143,4 +157,16 @@ public class PlayerStatus : MonoBehaviour
 
         //alt_camera.position = alt_camera.main_target.transform.position;
     }
+
+    private void respawn() {
+        /*this.transform.position = spawnPoint.transform.position;
+        (this.GetComponent<Rigidbody2D>()).simulated = true;
+        Health=3;
+        (healthBarImage.GetComponent<Image>()).sprite = hearts[0];
+        Time.timeScale = 1;
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);*/
+        SceneManager.LoadScene("SampleScene");
+
+    }
+
 }
