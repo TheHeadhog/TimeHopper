@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Hazzard
   - FallDeath
+  - GM
+  - Splitter
+  - Full Camera
+  - AltCam
+  - BasicCam
+  - FullCam
   layers:
   - Default
   - TransparentFX

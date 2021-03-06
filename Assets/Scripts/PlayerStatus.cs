@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class PlayerStatus : MonoBehaviour
 {
 
- 
+
+    public bool canChange = false;
     public GameObject spawnPoint;
     public int Health;
     private int Fuel;
@@ -53,7 +54,7 @@ public class PlayerStatus : MonoBehaviour
         //Prelazak u suprotni timeline se aktivira tasterom 'C'
         if (Input.GetKeyDown(KeyCode.C))
         {
-            if(!checkCollision()) {
+            if(!checkCollision() && canChange) {
                 changeTimeline();
                 hideShadow();
             }
@@ -159,14 +160,7 @@ public class PlayerStatus : MonoBehaviour
     }
 
     private void respawn() {
-        /*this.transform.position = spawnPoint.transform.position;
-        (this.GetComponent<Rigidbody2D>()).simulated = true;
-        Health=3;
-        (healthBarImage.GetComponent<Image>()).sprite = hearts[0];
-        Time.timeScale = 1;
-        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);*/
-        SceneManager.LoadScene("SampleScene");
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
